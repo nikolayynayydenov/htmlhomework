@@ -1,0 +1,22 @@
+table {
+	margin: 0 auto;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    background-color: #9C9C9C;
+    color:black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;  
+    font-size: 50px;
+}
+
+tr.white-pieces td
+{
+    color: white;
+}
+tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even) {
+	background: #780D0D;
+}

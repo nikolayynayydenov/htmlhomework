@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+        <script>
+            $(document).ready(function() {
+                $('form').submit(function(event){
+                    
+                    event.preventDefault();
+                    
+                        $.getJSON('students',{name:$("#user").val()}).done(function(data) {
+                        $('#user_name').text(data);
+                    }).fail(function (jqXHR, textStatus, error) {
+                        $("#error").text('Error!!!');                
+                });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="user" placeholder="User">
+            <input type="submit" value="Submi!">
+        </form>
+        
+            <p id="user_name"></p>
+            <p id="error"></p>
+    </body>
+</html>
